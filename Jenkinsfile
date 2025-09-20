@@ -21,7 +21,7 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                sh 'npm run test -- --run'   // Vitest needs --run in CI
+                sh 'npm run test -- --run --reporter=basic --no-color'   // Vitest needs --run in CI
             }
         }
 
