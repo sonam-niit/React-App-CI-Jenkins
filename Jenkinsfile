@@ -14,14 +14,13 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'rm -rf node_modules package-lock.json'
-                sh 'npm install --ignore-scripts=false'
+                sh 'npm install'
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'npm run test -- --run --reporter=basic --no-color'   // Vitest needs --run in CI
+                sh 'npm run test -- --run'   // Vitest needs --run in CI
             }
         }
 
