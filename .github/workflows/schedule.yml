@@ -1,0 +1,17 @@
+name: Schedule-Test
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+jobs:
+   show-time:
+     runs-on: ubuntu-latest
+     steps:
+       - name: Show Current UTC Time
+         run: date -u
+
+       - name: Show Current Local time (IST)
+         run: date -d '+5 hours 30 minutes'
+    
