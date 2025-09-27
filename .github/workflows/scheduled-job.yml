@@ -30,7 +30,7 @@ jobs:
               run: npm test
 
             - name: Build React App
-              run: num run build
+              run: npm run build
 
             # upload Build Artifacts
             - name: Upload Build Artifacts
