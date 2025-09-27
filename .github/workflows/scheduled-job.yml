@@ -1,0 +1,23 @@
+name: Daily Build
+
+on:
+    schedule:
+        - cron: "*/5 * * * *"
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v5
+
+            - name: Set up Node JS
+              uses: actions/setup-node@v5
+              with:
+                node-version: '20.19.0'
+            
+            - name: Install Dependencies
+              run: npm install
+
+            - name: Run tests
+              run: npm test
