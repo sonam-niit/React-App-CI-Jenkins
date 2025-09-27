@@ -12,6 +12,9 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
+
+            - name: Show Current Time and Date
+              run: date -u
             - name: Checkout Code
               uses: actions/checkout@v5
 
